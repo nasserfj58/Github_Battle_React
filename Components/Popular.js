@@ -18,7 +18,7 @@ function Repo(props) {
         <Row> 
         <Image className="img-thumbnail" src={photoSrc} circle />
         </Row>
-        <Row ClassName="text-cente">
+        <Row className="text-cente">
         <Col className="text-cente" md={12}>
         <a className="text-cente" href={repoLink}><span className="text-right"> {name}</span></a>
         </Col>
