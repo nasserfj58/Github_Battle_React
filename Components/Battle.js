@@ -33,13 +33,9 @@ class Battle extends React.Component {
                     </Row>
                     <Row className="show-grid">
                         
-                        <h1>Winner is {this.state.player1.score > this.state.player2.score ? this.state.player1.username : this.state.player2.username}</h1>
+                        <h1>{this.state.player1.score > this.state.player2.score ? "Winner is " + this.state.player1.username : this.state.player1.score > this.state.player2.score ? "Winner is " + this.state.player2.username :"IT's A Tie" }</h1>
                     </Row>
-                    <Row className="show-grid">
-                        <Col className="midle" md={12} xs={12}>
-                            <Button onClick={this.Fight}>Fight</Button>
-                        </Col>
-                    </Row>
+                    <Button onClick={()=>{this.setState({player1: { username: '', score: 0, avatarUI: '' }, player2: { username: '', score: 0, avatarUI: '' },Winner:'' })}}>New Fight ?</Button>
                 </Grid> :
                 <form className="battle-form">
                     <Grid>
