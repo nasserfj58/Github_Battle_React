@@ -8,6 +8,13 @@ module.exports = {
         return Axios.get(encodidURI)
         .then((response) => {return response.data.items});
 
+    },
+    fetchUserRepo : (userName) => {
+        var uri = `https://api.github.com/search/users?q=${userName}`;
+        var encodidURI  = window.encodeURI(uri);
+        return Axios.get(encodidURI)
+        .then((response) => {return response.data.items});
+        
     }
 
 }

@@ -5,12 +5,10 @@ var NavItem = require('react-bootstrap').NavItem;
 
 function Nav() {
     return (
-        
         <Nav1 bsStyle="pills">
          <li ><NavLink exact className="active" to='/'>Home</NavLink></li>
          <li ><NavLink className="active" to='/popular'>Papoular</NavLink></li>         
         </Nav1>
-        
 
     )
 }
