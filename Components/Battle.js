@@ -10,7 +10,7 @@ let Image = Bootstrap.Image;
 class Battle extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { player1: { username: '', score: 0, avatarUI: '' }, player2: { username: '', score: 0, avatarUI: '' },Winner:'' }
+        this.state = { player1: { username: '', score: 0, avatarUI: '' }, player2: { username: '', score: 0, avatarUI: '' }, Winner: '' }
         this.Fight = Fight.bind(this);
         this.HandleChange = HandleChange.bind(this);
     }
@@ -21,21 +21,25 @@ class Battle extends React.Component {
                 <Grid>
                     <Row className="show-grid">
                         <Col md={6} xs={6}>
-                        <label>Score: {this.state.player1.score}</label>
-                        <Image className="img-thumbnail" src={this.state.player1.avatarUI} circle />
+                            <label>Score: {this.state.player1.score}</label>
+                            <Image className="img-thumbnail" src={this.state.player1.avatarUI} circle />
 
                         </Col>
                         <Col md={6} xs={6}>
-                        <label>Score: {this.state.player2.score}</label>
-                        <Image className="img-thumbnail" src={this.state.player2.avatarUI} circle />
+                            <label>Score: {this.state.player2.score}</label>
+                            <Image className="img-thumbnail" src={this.state.player2.avatarUI} circle />
 
                         </Col>
                     </Row>
                     <Row className="show-grid">
-                        
-                        <h1>{this.state.player1.score > this.state.player2.score ? "Winner is " + this.state.player1.username : this.state.player1.score > this.state.player2.score ? "Winner is " + this.state.player2.username :"IT's A Tie" }</h1>
+                        <h1>
+                            {this.state.player1.score > this.state.player2.score ?
+                                `Winner is ${this.state.player1.username}` :
+                                this.state.player1.score > this.state.player2.score ?
+                                    `Winner is ${this.state.player2.username}` : "IT's A Tie"}
+                        </h1>
                     </Row>
-                    <Button onClick={()=>{this.setState({player1: { username: '', score: 0, avatarUI: '' }, player2: { username: '', score: 0, avatarUI: '' },Winner:'' })}}>New Fight ?</Button>
+                    <Button onClick={() => { this.setState({ player1: { username: '', score: 0, avatarUI: '' }, player2: { username: '', score: 0, avatarUI: '' }, Winner: '' }) }}>New Fight ?</Button>
                 </Grid> :
                 <form className="battle-form">
                     <Grid>
@@ -67,7 +71,7 @@ function HandleChange(event) {
 
 }
 function Fight() {
-   
+
     api.fetchUserRepo(this.state.player1.username).then(user => { this.setState({ player1: { username: this.state.player1.username, score: user[0].score, avatarUI: user[0].avatar_url } }) });
 
     api.fetchUserRepo(this.state.player2.username).then(user => { this.setState({ player2: { username: this.state.player2.username, score: user[0].score, avatarUI: user[0].avatar_url } }) });
