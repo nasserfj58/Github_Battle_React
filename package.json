@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "author": "Nasser Fahad",
+  "license": "ISC",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "create": "webpack",
     "start": "webpack-dev-server --open"
   },
-  "author": "Nasser Fahad",
-  "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
     "prop-types": "^15.6.0",
