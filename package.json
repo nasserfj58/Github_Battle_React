@@ -8,7 +8,7 @@
     "create": "webpack",
     "start": "webpack-dev-server --open"
   },
-  "author": "",
+  "author": "Nasser Fahad",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.17.1",
